@@ -29,13 +29,14 @@ function Calc01(x)
 		
 		t = {year=2012, month=1, day=1, hour=0}
 
-		local tm
-		tm = os.time(t)
-		tm = tm + second
+		--local tm
+		local getTime = os.date("%c");
+		--tm = os.time(getTime)
+		--tm = tm + 0
 		
-		local s
-		s = os.date("%Y年%m月%d日%H时%M分%S秒",tm)
-		return s
+		--local s
+		--s = os.date("%Y年%m月%d日%H时%M分%S秒",tm)
+		return getTime
 end
 
 function Calc02(x)
