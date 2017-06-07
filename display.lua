@@ -53,11 +53,19 @@ function Calc02(x)
 end
 
 function Calc03(x)
-	local y
-	y = string.byte(x,1)
-	y = 1221800.0/(298.0*math.log(2.0*y/(128.0-y))+4100)-273.0
+	local second
+	second = 0
+	for i=1,4 do
+		second = second * 256 + string.byte(x,i)
+	end 
+	
+	day = math.floor(second / (24*3600))
+	hour = math.floor(second%(24*3600)/3600)
+	minits =  math.floor((second % 3600)/60)
+	seconds = second % 60
+	
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%dÃÏ%d ±%d∑÷%d√Î",day, hour, minits, seconds)
 	return s
 end
 

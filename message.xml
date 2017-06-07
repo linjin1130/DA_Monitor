@@ -13,8 +13,17 @@
 		</Message>
 		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
 		</Message>
+		<Message name="已运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
+		</Message>
 		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
-		</Message> -->
+		</Message> -->		
+		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="A/B" value="255"/>
+			<EnumValue name="C" value="2"/>
+			<EnumValue name="D" value="3"/>
+		</Message>
 		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="高速DAC" value="4"/>
 		</Message>
@@ -39,7 +48,7 @@
 		</Message>
 		<Message name="AD9136#2_芯片版本" startByte="303" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
 		</Message>
-		
+
 		<Message name="AD9136#1_增益0" startByte="115" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#2_增益0" startByte="315" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
@@ -54,15 +63,15 @@
 		</Message>
 		<Message name="AD9136#1_BSM状态" startByte="121" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
-			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>		
-			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>	
-			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>	
+			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
+			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
+			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
 		</Message>
 		<Message name="AD9136#2_BSM状态" startByte="321" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
-			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>		
-			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>	
-			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>	
+			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
+			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
+			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
 		</Message>
 		<Message name="AD9136#1_IRQ状态0" startByte="104" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -120,7 +129,7 @@
 		<!-- </Message> -->
 		<!-- <Message name="AD9136#2_IRQ状态0-0" startByte="304" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0"> -->
 		<!-- </Message> -->
-		
+
 		<!-- <Message name="AD9136#1_FIFO满状态寄存器" startByte="125" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="Lane FIFO满正常" value="0"/>
 		</Message>
@@ -157,7 +166,7 @@
 		<Message name="AD9136#2_初始化LANE同步标志" startByte="405" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="初始化LANE同步正常" value="255"/>
 		</Message>
-		
+
 		<Message name="AD9136#1_错误计数监测" startByte="197" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#2_错误计数监测" startByte="397" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
@@ -180,66 +189,66 @@
 		</Message>
 		<Message name="AD9136#1_同步控制-7" startByte="111" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="同步使能" value="1"/>
-			<EnumValue name="同步禁止" color="#FF0000" value="0"/>	
+			<EnumValue name="同步禁止" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步控制-7" startByte="311" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="同步使能" value="1"/>
-			<EnumValue name="同步禁止" color="#FF0000" value="0"/>	
+			<EnumValue name="同步禁止" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步控制-0-3" startByte="111" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="one-shot模式" value="1"/>
-			<EnumValue name="连续模式" color="#FF0000" value="2"/>	
-			<EnumValue name="监测模式" color="#FF0000" value="8"/>	
-			<EnumValue name="one-shot-监测模式" color="#FF0000" value="9"/>	
+			<EnumValue name="连续模式" color="#FF0000" value="2"/>
+			<EnumValue name="监测模式" color="#FF0000" value="8"/>
+			<EnumValue name="one-shot-监测模式" color="#FF0000" value="9"/>
 		</Message>
 		<Message name="AD9136#2_同步控制-0-3" startByte="311" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="one-shot模式" value="1"/>
-			<EnumValue name="连续模式" value="2"/>	
-			<EnumValue name="监测模式" value="8"/>	
-			<EnumValue name="one-shot-监测模式" value="9"/>	
+			<EnumValue name="连续模式" value="2"/>
+			<EnumValue name="监测模式" value="8"/>
+			<EnumValue name="one-shot-监测模式" value="9"/>
 		</Message>
 		<Message name="AD9136#1_同步状态-7" startByte="112" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="同步状态机忙" color="#FF0000" value="1"/>	
-			<EnumValue name="同步状态机空闲" value="0"/>	
+			<EnumValue name="同步状态机忙" color="#FF0000" value="1"/>
+			<EnumValue name="同步状态机空闲" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步状态-7" startByte="312" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="同步状态机忙" color="#FF0000" value="1"/>	
-			<EnumValue name="同步状态机空闲" value="0"/>	
+			<EnumValue name="同步状态机忙" color="#FF0000" value="1"/>
+			<EnumValue name="同步状态机空闲" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步状态-3" startByte="112" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC对齐锁定" value="1"/>	
-			<EnumValue name="LMFC对齐锁定不正常" color="#FF0000" value="0"/>	
+			<EnumValue name="LMFC对齐锁定" value="1"/>
+			<EnumValue name="LMFC对齐锁定不正常" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步状态-3" startByte="312" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC对齐锁定" value="1"/>	
-			<EnumValue name="LMFC对齐锁定不正常" color="#FF0000" value="0"/>	
+			<EnumValue name="LMFC对齐锁定" value="1"/>
+			<EnumValue name="LMFC对齐锁定不正常" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步状态-2" startByte="112" startBit="2" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="同步逻辑跟随SYSREF旋转" value="1"/>	
-			<EnumValue name="正常" value="0"/>	
+			<EnumValue name="同步逻辑跟随SYSREF旋转" value="1"/>
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步状态-2" startByte="312" startBit="2" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="同步逻辑跟随SYSREF旋转" value="1"/>	
-			<EnumValue name="正常" value="0"/>	
+			<EnumValue name="同步逻辑跟随SYSREF旋转" value="1"/>
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步状态-1" startByte="112" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC同步相位错误越界" color="#FF0000" value="1"/>	
-			<EnumValue name="正常" value="0"/>	
+			<EnumValue name="LMFC同步相位错误越界" color="#FF0000" value="1"/>
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步状态-1" startByte="312" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC同步相位错误越界" color="#FF0000" value="1"/>	
-			<EnumValue name="正常" value="0"/>	
+			<EnumValue name="LMFC同步相位错误越界" color="#FF0000" value="1"/>
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步状态-0" startByte="112" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC同步已收到SYSREF脉冲" value="1"/>	
-			<EnumValue name="LMFC同步未收到SYSREF脉冲" color="#FF0000" value="0"/>	
+			<EnumValue name="LMFC同步已收到SYSREF脉冲" value="1"/>
+			<EnumValue name="LMFC同步未收到SYSREF脉冲" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步状态-0" startByte="312" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="LMFC同步已收到SYSREF脉冲" value="1"/>	
-			<EnumValue name="LMFC同步未收到SYSREF脉冲" color="#FF0000" value="0"/>	
+			<EnumValue name="LMFC同步已收到SYSREF脉冲" value="1"/>
+			<EnumValue name="LMFC同步未收到SYSREF脉冲" color="#FF0000" value="0"/>
 		</Message>
-		
-		
+
+
 		<Message name="AD9136#1_DAC PLL状态-7" startByte="207" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="DAC PLL上越界" color="#FF0000" value="1"/>
 			<EnumValue name="正常" value="0"/>
@@ -274,90 +283,90 @@
 		</Message>
 		<Message name="AD9136#1_校准状态0-7" startByte="208" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准过程完成" value="1"/>
-			<EnumValue name="校准未运行过" color="#FF0000" value="0"/>		
+			<EnumValue name="校准未运行过" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态0-7" startByte="408" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准过程完成" value="1"/>
-			<EnumValue name="校准未运行过" color="#FF0000" value="0"/>		
+			<EnumValue name="校准未运行过" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态0-6" startByte="208" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准正在执行" value="1"/>
-			<EnumValue name="校准未在执行" value="0"/>		
+			<EnumValue name="校准未在执行" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态0-6" startByte="408" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准正在执行" value="1"/>
-			<EnumValue name="校准未在执行" value="0"/>		
+			<EnumValue name="校准未在执行" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态0-5" startByte="208" startBit="5" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果上饱和" value="1"/>
-			<EnumValue name="校准上边界正常" value="0"/>		
+			<EnumValue name="校准上边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态0-5" startByte="408" startBit="5" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果上饱和" value="1"/>
-			<EnumValue name="校准上边界正常" value="0"/>		
+			<EnumValue name="校准上边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态0-4" startByte="208" startBit="4" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果下饱和" value="1"/>
-			<EnumValue name="校准下边界正常" value="0"/>		
+			<EnumValue name="校准下边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态0-4" startByte="408" startBit="4" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果下饱和" value="1"/>
-			<EnumValue name="校准下边界正常" value="0"/>		
+			<EnumValue name="校准下边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态1-7" startByte="209" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准过程完成" value="1"/>
-			<EnumValue name="校准未运行过" value="0"/>		
+			<EnumValue name="校准未运行过" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态1-7" startByte="409" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准过程完成" value="1"/>
-			<EnumValue name="校准未运行过" value="0"/>		
+			<EnumValue name="校准未运行过" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态1-6" startByte="209" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准正在执行" value="1"/>
-			<EnumValue name="校准未在执行" value="0"/>		
+			<EnumValue name="校准未在执行" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态1-6" startByte="409" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准正在执行" value="1"/>
-			<EnumValue name="校准未在执行" value="0"/>		
+			<EnumValue name="校准未在执行" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态1-5" startByte="209" startBit="5" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果上饱和" value="1"/>
-			<EnumValue name="校准上边界正常" value="0"/>		
+			<EnumValue name="校准上边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态1-5" startByte="409" startBit="5" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果上饱和" value="1"/>
-			<EnumValue name="校准上边界正常" value="0"/>		
+			<EnumValue name="校准上边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_校准状态1-4" startByte="209" startBit="4" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果下饱和" value="1"/>
-			<EnumValue name="校准下边界正常" value="0"/>	
+			<EnumValue name="校准下边界正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_校准状态1-4" startByte="409" startBit="4" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="校准结果下饱和" value="1"/>
-			<EnumValue name="校准下边界正常" value="0"/>	
+			<EnumValue name="校准下边界正常" value="0"/>
 		</Message>
-		
+
 		<Message name="AD9136#1_LMFC当前同步对齐错误" startByte="113" startBit="0" bitLength="4" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#2_LMFC当前同步对齐错误" startByte="313" startBit="0" bitLength="4" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#1_LMFC当前对齐错误标志" startByte="114" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="当前同步错误超过下边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_LMFC当前同步错误标志" startByte="314" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="当前同步错误超过下边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_LMFC当前同步错误标志" startByte="114" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="当前同步错误超过上边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_LMFC当前同步错误标志" startByte="314" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="当前同步错误超过上边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
-		
+
 		<Message name="AD9136#1_PRBS错误" startByte="122" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#2_PRBS错误" startByte="322" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
@@ -370,7 +379,7 @@
 		</Message>
 		<Message name="AD9136#2_动态链路1延时" startByte="324" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		
+
 		<Message name="AD9136#1_JESD检查-5" startByte="108" startBit="5" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="LMFC延时大于JESD K参数" color="#FF0000" value="1"/>
 			<EnumValue name="正常" value="0"/>
@@ -425,19 +434,19 @@
 		</Message>
 		<Message name="AD9136#1_同步错误标志-7" startByte="110" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="上一次同步错误超过下边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步错误标志-7" startByte="310" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="上一次同步错误超过下边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_同步错误标志-6" startByte="110" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="上一次同步错误超过上边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_同步错误标志-6" startByte="310" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="上一次同步错误超过上边界" value="1"/>
-			<EnumValue name="正常" value="0"/>		
+			<EnumValue name="正常" value="0"/>
 		</Message>
 		<Message name="AD9136#1_IRQ状态1" startByte="105" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -451,8 +460,8 @@
 		</Message>
 		<Message name="AD9136#2_IRQ状态3" startByte="307" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		
-		
+
+
 		<Message name="AD9136#1_FIFO满状态寄存器-7" startByte="125" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="Lane FIFO满" value="1"/>
 			<EnumValue name="正常" value="0"/>
@@ -581,7 +590,7 @@
 			<EnumValue name="Lane FIFO空" value="1"/>
 			<EnumValue name="正常" value="0"/>
 		</Message>
-		
+
 		<!-- 特别关注的寄存器 -->
 
 		<Message name="AD9136#1_代码组同步标志-7" startByte="202" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
@@ -846,8 +855,76 @@
 		<Message name="AD9136#2_中断向量" startByte="406" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 			<!-- <EnumValue name="正常" value="1"/> -->
 		</Message>
-
-		<Message name="AD9516_REG000" startByte="16" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="芯片1通道1#发送状态" startByte="700" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="XXXX" value="0"/>
+		</Message>
+		<Message name="芯片1通道1#序列控制状态" startByte="700" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_WR_FIRST" value="4"/>
+			<EnumValue name="ST_RD1" value="6"/>
+			<EnumValue name="ST_RD2" value="14"/>
+			<EnumValue name="ST_WAIT_TRIG" value="13"/>
+			<EnumValue name="ST_WAIT_CNT" value="11"/>
+			<EnumValue name="ST_RD_DATA" value="15"/>
+			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		</Message>
+		<Message name="芯片1通道1#RDY失败计数" startByte="701" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2#发送状态" startByte="702" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="XXXX" value="0"/>
+		</Message>
+		<Message name="芯片1通道2#序列控制状态" startByte="702" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_WR_FIRST" value="4"/>
+			<EnumValue name="ST_RD1" value="6"/>
+			<EnumValue name="ST_RD2" value="14"/>
+			<EnumValue name="ST_WAIT_TRIG" value="13"/>
+			<EnumValue name="ST_WAIT_CNT" value="11"/>
+			<EnumValue name="ST_RD_DATA" value="15"/>
+			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		</Message>
+		<Message name="芯片1通道2#RDY失败计数" startByte="703" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1#发送状态" startByte="704" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="XXXX" value="0"/>
+		</Message>
+		<Message name="芯片2通道1#序列控制状态" startByte="704" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_WR_FIRST" value="4"/>
+			<EnumValue name="ST_RD1" value="6"/>
+			<EnumValue name="ST_RD2" value="14"/>
+			<EnumValue name="ST_WAIT_TRIG" value="13"/>
+			<EnumValue name="ST_WAIT_CNT" value="11"/>
+			<EnumValue name="ST_RD_DATA" value="15"/>
+			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		</Message>
+		<Message name="芯片2通道1#RDY失败计数" startByte="705" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2#发送状态" startByte="706" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="XXXX" value="0"/>
+		</Message>
+		<Message name="芯片2通道2#序列控制状态" startByte="706" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_WR_FIRST" value="4"/>
+			<EnumValue name="ST_RD1" value="6"/>
+			<EnumValue name="ST_RD2" value="14"/>
+			<EnumValue name="ST_WAIT_TRIG" value="13"/>
+			<EnumValue name="ST_WAIT_CNT" value="11"/>
+			<EnumValue name="ST_RD_DATA" value="15"/>
+			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		</Message>
+		<Message name="芯片2通道2#RDY失败计数" startByte="707" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		
+		<!--<Message name="AD9516_REG000" startByte="16" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9516_REG001" startByte="17" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -978,6 +1055,6 @@
 		<Message name="AD9516_REG064" startByte="80" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9516_REG065" startByte="81" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
+		</Message>-->
 	</MessageBlock>
 </MESSAGES>
