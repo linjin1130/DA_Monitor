@@ -70,20 +70,26 @@ function Calc03(x)
 end
 
 function Calc04(x)
-	local y
-	y = string.byte(x,1)
-	y = 2.426*10.0/256.0*y
+	local cnt
+	cnt = 0
+	for i=1,4 do
+		cnt = cnt * 256 + string.byte(x,5-i)
+	end 
+
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%d",cnt)
 	return s
 end
 
 function Calc05(x)
-	local y
-	y = string.byte(x,1)
-	y = 1.264*10.0/256.0*y
+	local cnt
+	cnt = 0
+	for i=1,2 do
+		cnt = cnt * 256 + string.byte(x,3-i)
+	end 
+
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%d",cnt)
 	return s
 end
 
