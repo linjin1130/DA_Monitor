@@ -3,7 +3,7 @@
 	<MessageBlock name="AD/DA Status" startByte="0">
 		<Message name="IP" startByte="0" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
 		</Message>
-<!-- 		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+<!--		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="sequence" startByte="5" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
@@ -11,8 +11,8 @@
 		</Message>
 		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
-		</Message>
+		<!--<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
+		</Message>-->
 		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
 		</Message>
 		<Message name="已运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
@@ -27,6 +27,14 @@
 			<EnumValue name="H" value="7"/>
 		</Message>	
 		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="备板" value="0"/>
+			<EnumValue name="主板" value="1"/>	
+		</Message>
+		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
 		</Message> -->
