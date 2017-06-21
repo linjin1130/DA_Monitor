@@ -44,6 +44,8 @@
 			<EnumValue name="NETWORK_CMD_WR" value="2"/>
 			<EnumValue name="NETWORK_CMD_CTRL" value="3"/>
 			<EnumValue name="NETWORK_CMD_ERR" value="4"/>
+			<EnumValue name="NETWORK_LEN_ERR" value="5"/>
+			<EnumValue name="NETWORK_NO_BUF" value="6"/>
 		</Message>
 		<Message name="指令计数-CMD_CTRL" startByte="816" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
@@ -58,6 +60,22 @@
 		<Message name="TCP-连接位置" startByte="902" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5">
 		</Message>
 		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_MEM" startByte="913" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-RD_MEM" startByte="914" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-RD_DATA" startByte="915" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-CMD_CTRL" startByte="916" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_DATA" startByte="917" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="高速DAC" value="4"/>
