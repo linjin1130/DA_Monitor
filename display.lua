@@ -77,7 +77,7 @@ function Calc04(x)
 	end 
 
 	local s
-	s = string.format("%d",cnt)
+	s = string.format("%u",cnt)
 	return s
 end
 
