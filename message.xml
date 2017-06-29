@@ -61,6 +61,7 @@
 		</Message>
 		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
+		<!-- 此处是TCP响应计数监视 -->
 		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
@@ -77,6 +78,17 @@
 		</Message>
 		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
+		<Message name="TCP响应-SENT_DATA" startByte="919" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<!-- 此处是TCP响应计数监视 -->
+		<!-- 此处是写波形或序列数据计数 -->
+		<Message name="写MEM-地址" startByte="820" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="写MEM-长度" startByte="824" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<!-- 此处是写波形或序列数据计数 -->
 		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="高速DAC" value="4"/>
 		</Message>
