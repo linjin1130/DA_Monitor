@@ -88,6 +88,14 @@
 		</Message>
 		<Message name="写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
+		<Message name="TCP关闭连接计数" startByte="922" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP关闭连接计数" startByte="921" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<!-- <Message name="TCP服务启动状态" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP服务启动状态2" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message> -->
 		<!-- 此处是写波形或序列数据计数 -->
 		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="高速DAC" value="4"/>
