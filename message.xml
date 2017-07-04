@@ -7,7 +7,7 @@
 		</Message>
 		<Message name="sequence" startByte="5" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
-		<Message name="Heart Beat" startByte="6" startBit="0" bitLength="32" unit="" parseType="number" dispIndex="0">
+		<Message name="软件版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="6">
 		</Message>
 		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -46,6 +46,7 @@
 			<EnumValue name="NETWORK_CMD_ERR" value="4"/>
 			<EnumValue name="NETWORK_LEN_ERR" value="5"/>
 			<EnumValue name="NETWORK_NO_BUF" value="6"/>
+			<EnumValue name="NETWORK_TIMEOUT" value="7"/>
 		</Message>
 		<Message name="指令计数-CMD_CTRL" startByte="816" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
@@ -90,7 +91,11 @@
 		</Message>
 		<Message name="TCP关闭连接计数" startByte="922" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="TCP关闭连接计数" startByte="921" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="TCP-块地址" startByte="932" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="UDP-发送状态" startByte="936" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
+		</Message>
+		<Message name="UDP-发送状态叠加" startByte="937" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
 		</Message>
 		<!-- <Message name="TCP服务启动状态" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
