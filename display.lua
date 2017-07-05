@@ -94,11 +94,13 @@ function Calc05(x)
 end
 
 function Calc06(x)
-	local y
-	y = string.byte(x,1)
-	y = 0.359*y
+	local hw_version
+	local sw_version
+
+	hw_version = string.byte(x,1)
+	sw_version = string.byte(x,2)
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%d-%02d",hw_version, sw_version)
 	return s
 end
 
