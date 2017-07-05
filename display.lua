@@ -105,11 +105,8 @@ function Calc06(x)
 end
 
 function Calc07(x)
-	local y
-	y = string.byte(x,1)
-	y = 0.156*y
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%d.%d.%d.%d",string.byte(x,1),string.byte(x,2),string.byte(x,3),string.byte(x,4))
 	return s
 end
 

@@ -93,6 +93,10 @@
 		</Message>
 		<Message name="TCP-块地址" startByte="932" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
+		<Message name="当前上位机IP" startByte="944" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="7">
+		</Message>
+		<Message name="上位机端口" startByte="940" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
 		<Message name="UDP-发送状态" startByte="936" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
 		</Message>
 		<Message name="UDP-发送状态叠加" startByte="937" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
