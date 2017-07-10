@@ -65,7 +65,7 @@ function Calc03(x)
 	seconds = second % 60
 	
 	local s
-	s = string.format("%dÃÏ%d ±%d∑÷%d√Î",day, hour, minits, seconds)
+	s = string.format("%d-%d:%d:%d",day, hour, minits, seconds)
 	return s
 end
 
