@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="GB2312"?>
 <MESSAGES>
 	<MessageBlock name="AD/DA Status" startByte="0">
-		<Message name="IP" startByte="0" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
+<!--		<Message name="IP" startByte="0" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
 		</Message>
-<!--		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="sequence" startByte="5" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message> -->
+		</Message> 
 		<Message name="软件版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="6">
 		</Message>
-		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<!--<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
-		</Message>-->
 		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
+		</Message>-->
+		<Message name="累计运行时间" startByte="735" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
 		</Message>
-		<Message name="已运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
+		<Message name="本次运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
+		</Message>
+		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="备板" value="0"/>
+			<EnumValue name="主板" value="1"/>	
+		</Message>
+		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="A/B" value="255"/>
@@ -28,13 +34,49 @@
 		</Message>	
 		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="备板" value="0"/>
-			<EnumValue name="主板" value="1"/>	
+		<Message name="硬件逻辑版本" startByte="730" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="软件版本" startByte="731" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="差分放大器放大倍数" startByte="732" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="滤波器版本" startByte="740" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>		
+		<Message name="滤波器带宽" startByte="733" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>	
+		<Message name="芯片1通道1增益码值" startByte="744" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2增益码值" startByte="746" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1增益码值" startByte="748" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2增益码值" startByte="750" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道1偏置码值" startByte="758" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2偏置码值" startByte="760" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1偏置码值" startByte="762" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2偏置码值" startByte="764" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>	
+		<Message name="触发间隔" startByte="772" startBit="0" bitLength="32" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="触发次数" startByte="776" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="DAC触发延时" startByte="778" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="DAC触发宽度" startByte="780" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="外部触发输出延时" startByte="781" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="外部触发输出宽度" startByte="783" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
 		</Message> -->
