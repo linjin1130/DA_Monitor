@@ -100,29 +100,6 @@
 		</Message>
 		<Message name="指令计数-WR_MEM" startByte="812" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
-		<Message name="TCP-连接位置" startByte="902" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5">
-		</Message>
-		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>
-		<!-- 此处是TCP响应计数监视 -->
-		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_MEM" startByte="913" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-RD_MEM" startByte="914" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-RD_DATA" startByte="915" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-CMD_CTRL" startByte="916" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_DATA" startByte="917" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-SENT_DATA" startByte="919" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
 		<!-- 此处是TCP响应计数监视 -->
 		<!-- 此处是写波形或序列数据计数 -->
 		<Message name="写MEM-地址" startByte="820" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
@@ -148,30 +125,6 @@
 		<Message name="TCP服务启动状态2" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
 		<!-- 此处是写波形或序列数据计数 -->
-		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="高速DAC" value="4"/>
-		</Message>
-		<Message name="AD9136#2_芯片类型" startByte="300" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="高速DAC" value="4"/>
-		</Message>
-		<Message name="AD9136#1_芯片标识" startByte="101" startBit="0" bitLength="16" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="0x4491" value="17553"/>
-		</Message>
-		<Message name="AD9136#2_芯片标识" startByte="301" startBit="0" bitLength="16" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="0x4491" value="17553"/>
-		</Message>
-		<Message name="AD9136#1_芯片等级" startByte="103" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="AD9136" value="6"/>
-			<EnumValue name="AD9135" value="4"/>
-		</Message>
-		<Message name="AD9136#2_芯片等级" startByte="303" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="AD9136" value="6"/>
-			<EnumValue name="AD9135" value="4"/>
-		</Message>
-		<Message name="AD9136#1_芯片版本" startByte="103" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="AD9136#2_芯片版本" startByte="303" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
-		</Message>
 		<Message name="芯片1通道1#发送状态" startByte="700" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="RUNNING" value="1"/>
 			<EnumValue name="输出默认电压" value="0"/>
@@ -236,11 +189,7 @@
 			<EnumValue name="ST_RD_DATA" value="15"/>
 			<EnumValue name="ST_CLR_FIFO" value="7"/>
 		</Message>
-		<Message name="芯片1通道2#RDY失败计数" startByte="703" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="芯片2通道2#RDY失败计数" startByte="707" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-
+		
 		<Message name="AD9136#1_增益0" startByte="115" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#2_增益0" startByte="315" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
@@ -264,6 +213,59 @@
 			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
 			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
 			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
+		</Message>
+		<Message name="TCP-连接位置" startByte="902" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5">
+		</Message>
+		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="高速DAC" value="4"/>
+		</Message>
+		<Message name="AD9136#2_芯片类型" startByte="300" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="高速DAC" value="4"/>
+		</Message>
+		<Message name="AD9136#1_芯片标识" startByte="101" startBit="0" bitLength="16" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="0x4491" value="17553"/>
+		</Message>
+		<Message name="AD9136#2_芯片标识" startByte="301" startBit="0" bitLength="16" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="0x4491" value="17553"/>
+		</Message>
+		<Message name="AD9136#1_芯片等级" startByte="103" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="AD9136" value="6"/>
+			<EnumValue name="AD9135" value="4"/>
+		</Message>
+		<Message name="AD9136#2_芯片等级" startByte="303" startBit="0" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="AD9136" value="6"/>
+			<EnumValue name="AD9135" value="4"/>
+		</Message>
+		<Message name="AD9136#1_芯片版本" startByte="103" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="AD9136#2_芯片版本" startByte="303" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
+		</Message>
+		
+		<!-- 此处是TCP响应计数监视 -->
+		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_MEM" startByte="913" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-RD_MEM" startByte="914" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-RD_DATA" startByte="915" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-CMD_CTRL" startByte="916" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_DATA" startByte="917" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="TCP响应-SENT_DATA" startByte="919" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		
+		<Message name="芯片1通道2#RDY失败计数" startByte="703" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2#RDY失败计数" startByte="707" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9136#1_IRQ状态0" startByte="104" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -310,11 +312,11 @@
 			<EnumValue name="SERDES PLL未锁定" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#1_IRQ状态0-1" startByte="104" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="Lane FIFO错误" color="#FF0000" value="1"/>
+			<EnumValue name="Lane FIFO错误" color="#0000FF" value="1"/>
 			<EnumValue name="Lane FIFO正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_IRQ状态0-1" startByte="304" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="Lane FIFO错误" color="#FF0000" value="1"/>
+			<EnumValue name="Lane FIFO错误" color="#0000FF" value="1"/>
 			<EnumValue name="Lane FIFO正常" value="0"/>
 		</Message>
 		<!-- <Message name="AD9136#1_IRQ状态0-0" startByte="104" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0"> -->
