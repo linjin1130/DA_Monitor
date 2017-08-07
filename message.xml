@@ -34,11 +34,11 @@
 		</Message>	
 		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="硬件逻辑版本" startByte="730" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="软件版本" startByte="731" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+<!-- 		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="差分放大器放大倍数" startByte="732" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -62,10 +62,7 @@
 		</Message>
 		<Message name="芯片2通道2偏置码值" startByte="764" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>
-		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>	
+
 		<Message name="触发间隔" startByte="772" startBit="0" bitLength="32" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="触发次数" startByte="776" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
@@ -77,9 +74,13 @@
 		<Message name="外部触发输出延时" startByte="781" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="外部触发输出宽度" startByte="783" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
+		</Message> -->
 		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
 		</Message> -->
+		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>			
 		<Message name="写MEM指令状态" startByte="900" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="初始化" value="0"/>
 			<EnumValue name="NETWORK_CMD_FIN" value="1"/>
