@@ -13,17 +13,17 @@
 		</Message>
 		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
 		</Message>-->
-		<Message name="累计运行时间" startByte="735" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
-		</Message>
+		<!-- <Message name="累计运行时间" startByte="735" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3"> -->
+		<!-- </Message> -->
 		<Message name="本次运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
 		</Message>
 		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="备板" value="0"/>
-			<EnumValue name="主板" value="1"/>	
+			<EnumValue name="主板" color="#0000FF" value="1"/>	
 		</Message>
 		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+<!-- 		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="A/B" value="255"/>
 			<EnumValue name="C" value="2"/>
 			<EnumValue name="D" value="3"/>
@@ -31,13 +31,13 @@
 			<EnumValue name="F" value="5"/>
 			<EnumValue name="G" value="6"/>
 			<EnumValue name="H" value="7"/>
-		</Message>	
-		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>	 -->
+		<Message name="PCB编号" startByte="708" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="9">
 		</Message>
-		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
 		</Message>
-		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
+<!-- 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message> -->
 <!-- 		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="差分放大器放大倍数" startByte="732" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">

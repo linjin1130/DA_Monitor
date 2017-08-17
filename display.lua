@@ -111,106 +111,124 @@ function Calc07(x)
 end
 
 function Calc08(x)
-	local y
-	y = string.byte(x,1)
-	y = 0.273*y
+	local H_ver, S_ver
+	H_ver = string.byte(x,1)
+	S_ver = string.byte(x,2)
 	local s
-	s = string.format("%.2f",y)
+	s = string.format("%d-%d", H_ver, S_ver)
 	return s
 end
 
 function Calc09(x)
-	local y
-	y = string.byte(x,1)
-	y = 0.198*y
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc10(x)
-	local y
-	y = string.byte(x,1)
-	y = 1.953*y
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc11(x)
-	local y
-	y = 0
-	for i=1,2 do
-			y = y * 256 + string.byte(x,i)
-	end 
-	y = -6.01188 - math.log(5100.0*y/(256.0*16.0-y))
-	y = 21367836.2978 + 345686.8966*y
-	y = -4622.53337 + math.sqrt(y)
-	y = -172843.44828/y - 273
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc12(x)
-	local y
-	y = string.byte(x,1)
-	y = 2.25*10.0/256.0*y
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc13(x)
-	local y
-	y = string.byte(x,1)
-	y = 2*10.0/256.0*y
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc14(x)
-	local y
-	y = 0
-	for i=1,3 do
-			y = y * 256 + string.byte(x,i)
-	end 
-	y = (y+1)*16/1024/1024
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc15(x)
-	local y
-	y = 0
-	for i=1,3 do
-			y = y * 256 + string.byte(x,i)
-	end 
-	y = y*16/1024/1024
-	local s
-	s = string.format("%.2f",y)
-	return s
-end
-
-function Calc16(x)
-	local y
-	y = 0
-	for i=string.len(x), 1, -1 do
-		y = y * 256 + string.byte(x,i)
+	local Ser, num, S
+	Ser = string.byte(x,2)
+	num = string.byte(x,1)
+	
+	if Ser == 2 then
+	  S = "C"
+	elseif Ser == 3 then
+	  S = "D"
+	elseif Ser == 4 then
+	  S = "E"
+	else
+	  S = "A/B"
 	end
-	local s
-	s = string.format("%d",y)
-	return s
+	local str
+	str = string.format("%s-%02d", S, num)
+	return str
 end
+-- function Calc09(x)
+	-- local y
+	-- y = string.byte(x,1)
+	-- y = 0.198*y
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
 
-function Calc17(x)
-	local a, b, c, d
-	a = string.byte(x, 1)
-	b = string.byte(x, 2)
-	c = string.byte(x, 3)
-	d = string.byte(x, 4)
-	s = string.format("%d.%d.%d.%d", a, b, c, d)
-	return s
-end
+-- function Calc10(x)
+	-- local y
+	-- y = string.byte(x,1)
+	-- y = 1.953*y
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc11(x)
+	-- local y
+	-- y = 0
+	-- for i=1,2 do
+			-- y = y * 256 + string.byte(x,i)
+	-- end 
+	-- y = -6.01188 - math.log(5100.0*y/(256.0*16.0-y))
+	-- y = 21367836.2978 + 345686.8966*y
+	-- y = -4622.53337 + math.sqrt(y)
+	-- y = -172843.44828/y - 273
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc12(x)
+	-- local y
+	-- y = string.byte(x,1)
+	-- y = 2.25*10.0/256.0*y
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc13(x)
+	-- local y
+	-- y = string.byte(x,1)
+	-- y = 2*10.0/256.0*y
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc14(x)
+	-- local y
+	-- y = 0
+	-- for i=1,3 do
+			-- y = y * 256 + string.byte(x,i)
+	-- end 
+	-- y = (y+1)*16/1024/1024
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc15(x)
+	-- local y
+	-- y = 0
+	-- for i=1,3 do
+			-- y = y * 256 + string.byte(x,i)
+	-- end 
+	-- y = y*16/1024/1024
+	-- local s
+	-- s = string.format("%.2f",y)
+	-- return s
+-- end
+
+-- function Calc16(x)
+	-- local y
+	-- y = 0
+	-- for i=string.len(x), 1, -1 do
+		-- y = y * 256 + string.byte(x,i)
+	-- end
+	-- local s
+	-- s = string.format("%d",y)
+	-- return s
+-- end
+
+-- function Calc17(x)
+	-- local a, b, c, d
+	-- a = string.byte(x, 1)
+	-- b = string.byte(x, 2)
+	-- c = string.byte(x, 3)
+	-- d = string.byte(x, 4)
+	-- s = string.format("%d.%d.%d.%d", a, b, c, d)
+	-- return s
+-- end
