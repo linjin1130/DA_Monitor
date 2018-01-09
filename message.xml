@@ -34,6 +34,101 @@
 		</Message>	 -->
 		<Message name="PCB±àºÅ" startByte="708" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="9">
 		</Message>
+		
+		<!-- 		struct stats_proto {
+		  STAT_COUNTER xmit;             /* Transmitted packets. */
+		  STAT_COUNTER recv;             /* Received packets. */
+		  STAT_COUNTER fw;               /* Forwarded packets. */
+		  STAT_COUNTER drop;             /* Dropped packets. */
+		  STAT_COUNTER chkerr;           /* Checksum error. */
+		  STAT_COUNTER lenerr;           /* Invalid length error. */
+		  STAT_COUNTER memerr;           /* Out of memory error. */
+		  STAT_COUNTER rterr;            /* Routing error. */
+		  STAT_COUNTER proterr;          /* Protocol error. */
+		  STAT_COUNTER opterr;           /* Error in options. */
+		  STAT_COUNTER err;              /* Misc error. */
+		  STAT_COUNTER cachehit;
+		} -->
+		
+		<Message name="lwip_MAC²ã-Transmitted packets" startByte="500" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Received packets" startByte="502" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Forwarded packets" startByte="504" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Dropped packets" startByte="506" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Checksum error" startByte="508" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Invalid length error" startByte="510" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Out of memory error" startByte="512" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Routing error" startByte="514" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Protocol error" startByte="516" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Error in options" startByte="518" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-Misc error" startByte="520" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC²ã-cachehit" startByte="522" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		
+		
+		<Message name="XXXXÐ´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		
+		<Message name="XXXXÐ´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<!-- struct stats_proto {
+		  STAT_COUNTER xmit;             /* Transmitted packets. */
+		  STAT_COUNTER recv;             /* Received packets. */
+		  STAT_COUNTER fw;               /* Forwarded packets. */
+		  STAT_COUNTER drop;             /* Dropped packets. */
+		  STAT_COUNTER chkerr;           /* Checksum error. */
+		  STAT_COUNTER lenerr;           /* Invalid length error. */
+		  STAT_COUNTER memerr;           /* Out of memory error. */
+		  STAT_COUNTER rterr;            /* Routing error. */
+		  STAT_COUNTER proterr;          /* Protocol error. */
+		  STAT_COUNTER opterr;           /* Error in options. */
+		  STAT_COUNTER err;              /* Misc error. */
+		  STAT_COUNTER cachehit;
+		}; -->
+		
+		<Message name="lwip_IP²ã-Transmitted packets" startByte="524" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Received packets" startByte="526" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Forwarded packets" startByte="528" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Dropped packets" startByte="530" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Checksum error" startByte="532" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Invalid length error" startByte="534" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Out of memory error" startByte="536" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Routing error" startByte="538" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Protocol error" startByte="540" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Error in options" startByte="542" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-Misc error" startByte="544" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP²ã-cachehit" startByte="546" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		
+		
+		<Message name="lwip_UDP²ã-Transmitted packets" startByte="548" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Received packets" startByte="550" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Forwarded packets" startByte="552" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Dropped packets" startByte="554" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Checksum error" startByte="556" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Invalid length error" startByte="558" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Out of memory error" startByte="560" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Routing error" startByte="562" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Protocol error" startByte="564" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Error in options" startByte="566" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-Misc error" startByte="568" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP²ã-cachehit" startByte="570" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>		
+		
+		<Message name="XXXXÐ´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="XXXXÐ´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>	
+		
+		<Message name="lwip_TCP²ã-Transmitted packets" startByte="572" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Received packets" startByte="574" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Forwarded packets" startByte="576" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Dropped packets" startByte="578" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Checksum error" startByte="580" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Invalid length error" startByte="582" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Out of memory error" startByte="584" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Routing error" startByte="586" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Protocol error" startByte="588" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Error in options" startByte="590" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-Misc error" startByte="592" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP²ã-cachehit" startByte="594" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>	
+		
 		<Message name="Ó²¼þÂß¼­°æ±¾" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
 		</Message>
 <!-- 		<Message name="Èí¼þ°æ±¾" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
@@ -107,7 +202,7 @@
 		</Message>
 		<Message name="Ð´MEM-³¤¶È" startByte="824" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
-		<Message name="Ð´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		<Message name="XXXXÐ´MEM-Ê£Óà" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<Message name="TCP¹Ø±ÕÁ¬½Ó¼ÆÊý" startByte="922" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -1183,5 +1278,7 @@
 		</Message>
 		<Message name="AD9516_REG065" startByte="81" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>-->
+
+		
 	</MessageBlock>
 </MESSAGES>
