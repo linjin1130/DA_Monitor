@@ -230,26 +230,24 @@
 			<EnumValue name="输出默认电压" value="0"/>
 		</Message>
 		<Message name="芯片1通道1#序列控制状态" startByte="700" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_IDLE" value="0"/>
 			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
 		</Message>
 		<Message name="芯片2通道1#序列控制状态" startByte="704" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_IDLE" value="0"/>
 			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
 		</Message>
 		<Message name="芯片1通道1#RDY失败计数" startByte="701" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -264,26 +262,24 @@
 			<EnumValue name="输出默认电压" value="0"/>
 		</Message>
 		<Message name="芯片1通道2#序列控制状态" startByte="702" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_IDLE" value="0"/>
 			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
 		</Message>
 		<Message name="芯片2通道2#序列控制状态" startByte="706" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
+			<EnumValue name="ST_IDLE" value="0"/>
 			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
 		</Message>
 		
 		<Message name="AD9136#1_增益0" startByte="115" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
