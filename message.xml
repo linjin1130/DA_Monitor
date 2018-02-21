@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="GB2312"?>
 <MESSAGES>
 	<MessageBlock name="AD/DA Status" startByte="0">
-		<Message name="IP" startByte="0" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
+<!--		<Message name="IP" startByte="0" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
 		</Message>
-<!--		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="count" startByte="4" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="sequence" startByte="5" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message> -->
+		</Message> 
 		<Message name="软件版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="6">
+		</Message>
+		<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
+		</Message>-->
+		<!-- <Message name="累计运行时间" startByte="735" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3"> -->
+		<!-- </Message> -->
+		<Message name="本次运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
+		</Message>
+		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="备板" value="0"/>
+			<EnumValue name="主板" color="#0000FF" value="1"/>	
 		</Message>
 		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<!--<Message name="reserved2" startByte="16" startBit="0" bitLength="20" unit="" parseType="number" dispIndex="0">
-		</Message>-->
-		<Message name="板上时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="1">
-		</Message>
-		<Message name="已运行时间" startByte="12" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="3">
-		</Message>
-		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+<!-- 		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="A/B" value="255"/>
 			<EnumValue name="C" value="2"/>
 			<EnumValue name="D" value="3"/>
@@ -25,19 +31,151 @@
 			<EnumValue name="F" value="5"/>
 			<EnumValue name="G" value="6"/>
 			<EnumValue name="H" value="7"/>
+		</Message>	 -->
+		<Message name="PCB编号" startByte="708" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="9">
+		</Message>
+		
+		<!-- 		struct stats_proto {
+		  STAT_COUNTER xmit;             /* Transmitted packets. */
+		  STAT_COUNTER recv;             /* Received packets. */
+		  STAT_COUNTER fw;               /* Forwarded packets. */
+		  STAT_COUNTER drop;             /* Dropped packets. */
+		  STAT_COUNTER chkerr;           /* Checksum error. */
+		  STAT_COUNTER lenerr;           /* Invalid length error. */
+		  STAT_COUNTER memerr;           /* Out of memory error. */
+		  STAT_COUNTER rterr;            /* Routing error. */
+		  STAT_COUNTER proterr;          /* Protocol error. */
+		  STAT_COUNTER opterr;           /* Error in options. */
+		  STAT_COUNTER err;              /* Misc error. */
+		  STAT_COUNTER cachehit;
+		} -->
+		
+		<Message name="lwip_MAC层-Transmitted packets" startByte="500" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Received packets" startByte="502" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Forwarded packets" startByte="504" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Dropped packets" startByte="506" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Checksum error" startByte="508" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Invalid length error" startByte="510" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Out of memory error" startByte="512" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Routing error" startByte="514" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Protocol error" startByte="516" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Error in options" startByte="518" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-Misc error" startByte="520" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_MAC层-cachehit" startByte="522" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		
+		
+		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		
+		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<!-- struct stats_proto {
+		  STAT_COUNTER xmit;             /* Transmitted packets. */
+		  STAT_COUNTER recv;             /* Received packets. */
+		  STAT_COUNTER fw;               /* Forwarded packets. */
+		  STAT_COUNTER drop;             /* Dropped packets. */
+		  STAT_COUNTER chkerr;           /* Checksum error. */
+		  STAT_COUNTER lenerr;           /* Invalid length error. */
+		  STAT_COUNTER memerr;           /* Out of memory error. */
+		  STAT_COUNTER rterr;            /* Routing error. */
+		  STAT_COUNTER proterr;          /* Protocol error. */
+		  STAT_COUNTER opterr;           /* Error in options. */
+		  STAT_COUNTER err;              /* Misc error. */
+		  STAT_COUNTER cachehit;
+		}; -->
+		
+		<Message name="lwip_IP层-Transmitted packets" startByte="524" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Received packets" startByte="526" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Forwarded packets" startByte="528" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Dropped packets" startByte="530" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Checksum error" startByte="532" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Invalid length error" startByte="534" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Out of memory error" startByte="536" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Routing error" startByte="538" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Protocol error" startByte="540" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Error in options" startByte="542" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-Misc error" startByte="544" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_IP层-cachehit" startByte="546" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		
+		
+		<Message name="lwip_UDP层-Transmitted packets" startByte="548" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Received packets" startByte="550" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Forwarded packets" startByte="552" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Dropped packets" startByte="554" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Checksum error" startByte="556" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Invalid length error" startByte="558" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Out of memory error" startByte="560" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Routing error" startByte="562" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Protocol error" startByte="564" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Error in options" startByte="566" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-Misc error" startByte="568" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_UDP层-cachehit" startByte="570" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>		
+		
+		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>	
-		<Message name="PCB编号" startByte="708" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		
+		<Message name="lwip_TCP层-Transmitted packets" startByte="572" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Received packets" startByte="574" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Forwarded packets" startByte="576" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Dropped packets" startByte="578" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Checksum error" startByte="580" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Invalid length error" startByte="582" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Out of memory error" startByte="584" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Routing error" startByte="586" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Protocol error" startByte="588" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Error in options" startByte="590" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-Misc error" startByte="592" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
+		<Message name="lwip_TCP层-cachehit" startByte="594" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>	
+		
+		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
 		</Message>
-		<Message name="主从板设置" startByte="710" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="备板" value="0"/>
-			<EnumValue name="主板" value="1"/>	
+<!-- 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message> -->
+<!-- 		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
+		<Message name="差分放大器放大倍数" startByte="732" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="滤波器版本" startByte="740" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>		
+		<Message name="滤波器带宽" startByte="733" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>	
+		<Message name="芯片1通道1增益码值" startByte="744" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2增益码值" startByte="746" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1增益码值" startByte="748" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2增益码值" startByte="750" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道1偏置码值" startByte="758" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2偏置码值" startByte="760" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1偏置码值" startByte="762" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道2偏置码值" startByte="764" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+
+		<Message name="触发间隔" startByte="772" startBit="0" bitLength="32" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="触发次数" startByte="776" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="DAC触发延时" startByte="778" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="DAC触发宽度" startByte="780" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="外部触发输出延时" startByte="781" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="外部触发输出宽度" startByte="783" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message> -->
+		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
+		</Message> -->
 		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>
-		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
-		</Message> -->
+		</Message>			
 		<Message name="写MEM指令状态" startByte="900" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="初始化" value="0"/>
 			<EnumValue name="NETWORK_CMD_FIN" value="1"/>
@@ -58,36 +196,13 @@
 		</Message>
 		<Message name="指令计数-WR_MEM" startByte="812" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
-		<Message name="TCP-连接位置" startByte="902" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5">
-		</Message>
-		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>
-		<!-- 此处是TCP响应计数监视 -->
-		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_MEM" startByte="913" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-RD_MEM" startByte="914" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-RD_DATA" startByte="915" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-CMD_CTRL" startByte="916" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_DATA" startByte="917" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="TCP响应-SENT_DATA" startByte="919" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
 		<!-- 此处是TCP响应计数监视 -->
 		<!-- 此处是写波形或序列数据计数 -->
 		<Message name="写MEM-地址" startByte="820" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<Message name="写MEM-长度" startByte="824" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
-		<Message name="写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
 		<Message name="TCP关闭连接计数" startByte="922" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -106,6 +221,95 @@
 		<Message name="TCP服务启动状态2" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
 		<!-- 此处是写波形或序列数据计数 -->
+		<Message name="芯片1通道1#发送状态" startByte="700" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="输出默认电压" value="0"/>
+		</Message>
+		<Message name="芯片2通道1#发送状态" startByte="704" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="输出默认电压" value="0"/>
+		</Message>
+		<Message name="芯片1通道1#序列控制状态" startByte="700" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="0"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
+		</Message>
+		<Message name="芯片2通道1#序列控制状态" startByte="704" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="0"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
+		</Message>
+		<Message name="芯片1通道1#RDY失败计数" startByte="701" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片2通道1#RDY失败计数" startByte="705" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="芯片1通道2#发送状态" startByte="702" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="输出默认电压" value="0"/>
+		</Message>
+		<Message name="芯片2通道2#发送状态" startByte="706" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="RUNNING" value="1"/>
+			<EnumValue name="输出默认电压" value="0"/>
+		</Message>
+		<Message name="芯片1通道2#序列控制状态" startByte="702" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="0"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
+		</Message>
+		<Message name="芯片2通道2#序列控制状态" startByte="706" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="ST_IDLE" value="0"/>
+			<EnumValue name="ST_RD_BACK" value="1"/>
+			<EnumValue name="ST_RD_SEQ" value="3"/>
+			<EnumValue name="ST_WAIT_TRIG" value="2"/>
+			<EnumValue name="ST_RD_LAST2" value="5"/>
+			<EnumValue name="ST_WAIT_CNT" value="6"/>
+			<EnumValue name="ST_RD_DATA" value="7"/>
+			<EnumValue name="ST_RD_LAST" value="4"/>
+		</Message>
+		
+		<Message name="AD9136#1_增益0" startByte="115" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="AD9136#2_增益0" startByte="315" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="AD9136#1_增益1" startByte="117" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="AD9136#2_增益1" startByte="317" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		<Message name="AD9136#1_结温度" startByte="119" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="2">
+		</Message>
+		<Message name="AD9136#2_结温度" startByte="319" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="2">
+		</Message>
+		<Message name="AD9136#1_BSM状态" startByte="121" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
+			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
+			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
+			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
+		</Message>
+		<Message name="AD9136#2_BSM状态" startByte="321" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
+			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
+			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
+			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
+		</Message>
+		<Message name="TCP-连接位置" startByte="902" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5">
+		</Message>
+		<Message name="TCP连接数" startByte="904" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		</Message>
 		<Message name="AD9136#1_芯片类型" startByte="100" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="高速DAC" value="4"/>
 		</Message>
@@ -130,98 +334,30 @@
 		</Message>
 		<Message name="AD9136#2_芯片版本" startByte="303" startBit="4" bitLength="4" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片1通道1#发送状态" startByte="700" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="RUNNING" value="1"/>
-			<EnumValue name="输出默认电压" value="0"/>
+		
+		<!-- 此处是TCP响应计数监视 -->
+		<Message name="TCP响应-RD_REG" startByte="911" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片2通道1#发送状态" startByte="704" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="RUNNING" value="1"/>
-			<EnumValue name="输出默认电压" value="0"/>
+		<Message name="TCP响应-WR_REG" startByte="912" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片1通道1#序列控制状态" startByte="700" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
-			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		<Message name="TCP响应-WR_MEM" startByte="913" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片2通道1#序列控制状态" startByte="704" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
-			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		<Message name="TCP响应-RD_MEM" startByte="914" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片1通道1#RDY失败计数" startByte="701" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="TCP响应-RD_DATA" startByte="915" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片2通道1#RDY失败计数" startByte="705" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="TCP响应-CMD_CTRL" startByte="916" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片1通道2#发送状态" startByte="702" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="RUNNING" value="1"/>
-			<EnumValue name="输出默认电压" value="0"/>
+		<Message name="TCP响应-WR_DATA" startByte="917" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片2通道2#发送状态" startByte="706" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="RUNNING" value="1"/>
-			<EnumValue name="输出默认电压" value="0"/>
+		<Message name="TCP响应-WR_ERR" startByte="918" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片1通道2#序列控制状态" startByte="702" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
-			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
+		<Message name="TCP响应-SENT_DATA" startByte="919" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
-		<Message name="芯片2通道2#序列控制状态" startByte="706" startBit="4" bitLength="4" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="ST_IDLE" value="5"/>
-			<EnumValue name="ST_RD_BACK" value="1"/>
-			<EnumValue name="ST_WR_FIRST" value="4"/>
-			<EnumValue name="ST_RD1" value="6"/>
-			<EnumValue name="ST_RD2" value="14"/>
-			<EnumValue name="ST_WAIT_TRIG" value="13"/>
-			<EnumValue name="ST_WAIT_CNT" value="11"/>
-			<EnumValue name="ST_RD_DATA" value="15"/>
-			<EnumValue name="ST_CLR_FIFO" value="7"/>
-		</Message>
+		
 		<Message name="芯片1通道2#RDY失败计数" startByte="703" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="芯片2通道2#RDY失败计数" startByte="707" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
-		</Message>
-
-		<Message name="AD9136#1_增益0" startByte="115" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="AD9136#2_增益0" startByte="315" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="AD9136#1_增益1" startByte="117" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="AD9136#2_增益1" startByte="317" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
-		</Message>
-		<Message name="AD9136#1_结温度" startByte="119" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="2">
-		</Message>
-		<Message name="AD9136#2_结温度" startByte="319" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="2">
-		</Message>
-		<Message name="AD9136#1_BSM状态" startByte="121" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
-			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
-			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
-			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
-		</Message>
-		<Message name="AD9136#2_BSM状态" startByte="321" startBit="6" bitLength="2" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="DATA为空状态" color="#FF0000" value="0"/>
-			<EnumValue name="由数据处理转为空" color="#FF0000" value="1"/>
-			<EnumValue name="由空转为数据处理" color="#FF0000" value="2"/>
-			<EnumValue name="数据处理状态" color="#00FF00" value="3"/>
 		</Message>
 		<Message name="AD9136#1_IRQ状态0" startByte="104" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -268,11 +404,11 @@
 			<EnumValue name="SERDES PLL未锁定" color="#FF0000" value="0"/>
 		</Message>
 		<Message name="AD9136#1_IRQ状态0-1" startByte="104" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="Lane FIFO错误" color="#FF0000" value="1"/>
+			<EnumValue name="Lane FIFO错误" color="#0000FF" value="1"/>
 			<EnumValue name="Lane FIFO正常" value="0"/>
 		</Message>
 		<Message name="AD9136#2_IRQ状态0-1" startByte="304" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="Lane FIFO错误" color="#FF0000" value="1"/>
+			<EnumValue name="Lane FIFO错误" color="#0000FF" value="1"/>
 			<EnumValue name="Lane FIFO正常" value="0"/>
 		</Message>
 		<!-- <Message name="AD9136#1_IRQ状态0-0" startByte="104" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0"> -->
@@ -1138,5 +1274,7 @@
 		</Message>
 		<Message name="AD9516_REG065" startByte="81" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>-->
+
+		
 	</MessageBlock>
 </MESSAGES>
