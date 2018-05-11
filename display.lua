@@ -130,12 +130,34 @@ function Calc09(x)
 	  S = "D"
 	elseif Ser == 4 then
 	  S = "E"
+	elseif Ser == 5 then
+	  S = "F"
+	elseif Ser == 6 then
+	  S = "G"
+	elseif Ser == 7 then
+	  S = "H"
+	elseif Ser == 8 then
+	  S = "I"
+	elseif Ser == 9 then
+	  S = "J"
 	else
 	  S = "A/B"
 	end
 	local str
 	str = string.format("%s-%02d", S, num)
 	return str
+end
+
+function Calc10(x)
+	local cnt
+	cnt = 0
+	for i=1,4 do
+		cnt = cnt * 256 + string.byte(x,5-i) * 65536
+	end 
+
+	local s
+	s = string.format("%u",cnt)
+	return s
 end
 -- function Calc09(x)
 	-- local y
