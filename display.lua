@@ -96,11 +96,13 @@ end
 function Calc06(x)
 	local hw_version
 	local sw_version
+	local big_version
 
-	hw_version = string.byte(x,1)
-	sw_version = string.byte(x,2)
+	big_version = string.byte(x,3)
+	hw_version = string.byte(x,2)
+	sw_version = string.byte(x,1)
 	local s
-	s = string.format("%d-%02d",hw_version, sw_version)
+	s = string.format("%02d-%03d-%03d",big_version, hw_version, sw_version)
 	return s
 end
 

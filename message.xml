@@ -21,8 +21,6 @@
 			<EnumValue name="备板" value="0"/>
 			<EnumValue name="主板" color="#0000FF" value="1"/>	
 		</Message>
-		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
-		</Message>
 <!-- 		<Message name="PCB版本" startByte="709" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="A/B" value="255"/>
 			<EnumValue name="C" value="2"/>
@@ -33,6 +31,8 @@
 			<EnumValue name="H" value="7"/>
 		</Message>	 -->
 		<Message name="PCB编号" startByte="708" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="9">
+		</Message>
+		<Message name="软件版本" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="6">
 		</Message>
 		
 		<!-- 		struct stats_proto {
@@ -129,9 +129,9 @@
 		<Message name="lwip_TCP层-Misc error" startByte="592" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
 		<Message name="lwip_TCP层-cachehit" startByte="594" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>	
 		 -->
-		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
+<!--		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
 		</Message>
-<!-- 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+ 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
 <!-- 		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -173,6 +173,9 @@
 		<!-- <Message name="reserved2" startByte="12" startBit="0" bitLength="64" unit="" parseType="number" dispIndex="0">
 		</Message> -->
 		
+		<Message name="初始化次数" startByte="10" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0">
+		</Message>
+		
 		<Message name="DA AD单次同步错误计数" startByte="724" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4"> 
 		</Message>
 		<Message name="DA AD单次同步正确计数" startByte="728" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4"> </Message>
@@ -181,18 +184,21 @@
 		<Message name="DA AD Qubit态接收错误计数" startByte="740" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4"> </Message>
 			
 		
-		<Message name="主从板设置" startByte="720" startBit="22" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="自适应失败" value="0"/>
-			<EnumValue name="自适应完成" value="1"/>	
+		<Message name="自适应" startByte="722" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="未完成" value="0"/>
+			<EnumValue name="完成" value="1"/>	
 		</Message>
-		<Message name="主从板设置" startByte="720" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="触发正常" value="0"/>
-			<EnumValue name="触发抖动" value="1"/>	
+			<Message name="抖动监视" startByte="722" startBit="6" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="正常" value="0"/>
+			<EnumValue name="抖动" value="1"/>	
 		</Message>
-		
+		<Message name="DAC输出" startByte="723" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="关闭" value="0"/>
+			<EnumValue name="开启" value="1"/>	
+		</Message>
 		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>
-		<Message name="DAC触发次数" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		<Message name="DAC触发次数" startByte="744" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>			
 		<Message name="写MEM指令状态" startByte="900" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="初始化" value="0"/>
@@ -232,9 +238,9 @@
 		</Message>
 		<Message name="UDP-发送状态" startByte="936" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
 		</Message>
-		<Message name="UDP-发送状态叠加" startByte="937" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
+		<!-- <Message name="UDP-发送状态叠加" startByte="937" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="4">
 		</Message>
-		<!-- <Message name="TCP服务启动状态" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+		<Message name="TCP服务启动状态" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="TCP服务启动状态2" startByte="920" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
