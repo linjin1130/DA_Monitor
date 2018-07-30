@@ -142,6 +142,16 @@ function Calc09(x)
 	  S = "I"
 	elseif Ser == 9 then
 	  S = "J"
+	elseif Ser == 10 then
+	  S = "K"
+	elseif Ser == 11 then
+	  S = "L"
+	elseif Ser == 12 then
+	  S = "M"
+	elseif Ser == 13 then
+	  S = "N"
+	elseif Ser == 14 then
+	  S = "O"
 	else
 	  S = "A/B"
 	end
@@ -160,6 +170,20 @@ function Calc10(x)
 	local s
 	s = string.format("%u",cnt)
 	return s
+end
+
+
+function Calc11(x)
+	local num, S
+	num = string.byte(x,1)
+	if num == 0 then
+	  S = "GOLDEN区"
+	elseif num == 3 then
+	  S = "UPDATE区"
+	else
+	  S = "未知区域"
+	end
+	return S
 end
 -- function Calc09(x)
 	-- local y
