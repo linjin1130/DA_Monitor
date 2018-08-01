@@ -185,6 +185,30 @@ function Calc11(x)
 	end
 	return S
 end
+
+function Calc12(x)
+	local cnt
+	cnt = 0
+	for i=1,2 do
+		cnt = cnt * 256 + string.byte(x,3-i)
+	end 
+
+	local s
+	s = string.format("%u",cnt)
+	return s
+end
+
+function Calc13(x)
+	local cnt
+	cnt = 0
+	for i=1,3 do
+		cnt = cnt * 256 + string.byte(x,4-i)
+	end 
+
+	local s
+	s = string.format("%u",cnt)
+	return s
+end
 -- function Calc09(x)
 	-- local y
 	-- y = string.byte(x,1)

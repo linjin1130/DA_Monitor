@@ -34,12 +34,6 @@
 		</Message>
 		<Message name="软件版本" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="6">
 		</Message>
-		<Message name="当前逻辑区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
-			<EnumValue name="GOLDEN区" color="#FF0000" value="0"/>
-			<EnumValue name="UPDATE区" color="#00FF00" value="255"/>	
-		</Message>
-		<!-- <Message name="黄金/更新区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="calc" dispIndex="11">
-		</Message> -->
 		
 		<!-- 		struct stats_proto {
 		  STAT_COUNTER xmit;             /* Transmitted packets. */
@@ -208,19 +202,19 @@
 		</Message>
 		<Message name="DAC触发次数" startByte="744" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>	
-		<Message name="DAC输出延时/ns" startByte="748" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="4">
+		<Message name="DAC输出延时/计数" startByte="748" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="12">
 		</Message>	
-		<Message name="触发输出延时/ns" startByte="752" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="4">
+		<Message name="触发输出延时/计数" startByte="752" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="12">
 		</Message>	
-		<Message name="触发输出宽度/ns" startByte="756" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="4">
+		<Message name="触发输出宽度/计数" startByte="756" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="12">
 		</Message>	
-		<Message name="一级触发间隔/ns" startByte="760" startBit="0" bitLength="20" unit="" parseType="calc" dispIndex="4">
+		<Message name="一级触发间隔/计数" startByte="760" startBit="0" bitLength="24" unit="" parseType="calc" dispIndex="13">
 		</Message>	
-		<Message name="一级触发次数" startByte="764" startBit="0" bitLength="20" unit="" parseType="calc" dispIndex="4">
+		<Message name="二级触发间隔/计数" startByte="764" startBit="0" bitLength="24" unit="" parseType="calc" dispIndex="13">
 		</Message>
-		<Message name="二级触发间隔/ns" startByte="768" startBit="0" bitLength="20" unit="" parseType="calc" dispIndex="4">
+		<Message name="一级触发次数" startByte="768" startBit="0" bitLength="24" unit="" parseType="calc" dispIndex="13">
 		</Message>	
-		<Message name="二级触发次数" startByte="772" startBit="0" bitLength="20" unit="" parseType="calc" dispIndex="4">
+		<Message name="二级触发次数" startByte="772" startBit="0" bitLength="24" unit="" parseType="calc" dispIndex="13">
 		</Message>			
 		<Message name="写MEM指令状态" startByte="900" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="初始化" value="0"/>
