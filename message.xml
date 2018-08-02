@@ -34,6 +34,12 @@
 		</Message>
 		<Message name="软件版本" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="6">
 		</Message>
+		<Message name="当前逻辑区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="GOLDEN区" color="#FF0000" value="0"/>
+			<EnumValue name="UPDATE区" color="#00FF00" value="255"/>	
+		</Message>
+		<!-- <Message name="黄金/更新区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="calc" dispIndex="11">
+		</Message> -->
 		
 		<!-- 		struct stats_proto {
 		  STAT_COUNTER xmit;             /* Transmitted packets. */
@@ -198,7 +204,7 @@
 			<EnumValue name="关闭" value="0"/>
 			<EnumValue name="开启" value="1"/>	
 		</Message>
-		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
+		<Message name="上位机触发次数" startByte="712" startBit="0" bitLength="24" unit="" parseType="calc" dispIndex="13">
 		</Message>
 		<Message name="DAC触发次数" startByte="744" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>	
