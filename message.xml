@@ -208,6 +208,10 @@
 		</Message>
 		<Message name="DAC触发次数" startByte="744" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
 		</Message>	
+		<Message name="触发输出状态" startByte="778" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="正在输出" value="0"/>
+			<EnumValue name="输出完成" value="1"/>	
+		</Message>
 		<Message name="DAC输出延时/计数" startByte="748" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="12">
 		</Message>	
 		<Message name="触发输出延时/计数" startByte="752" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="12">
