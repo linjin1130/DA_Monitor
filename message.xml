@@ -191,7 +191,10 @@
 		<Message name="DA 收到的Qubit态信息" startByte="738" startBit="0" bitLength="16" unit="" parseType="number" dispIndex="0"> </Message>
 		<Message name="DA AD总同步错误计数" startByte="732" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4"> </Message>
 		<Message name="DA AD Qubit态接收错误计数" startByte="740" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4"> </Message>
-		
+		<Message name="工作模式" startByte="723" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="多板工作" value="0"/>
+			<EnumValue name="单板工作" value="1"/>	
+		</Message>
 		<Message name="自适应" startByte="722" startBit="7" bitLength="1" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="未完成" value="0"/>
 			<EnumValue name="完成" value="1"/>	
