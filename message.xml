@@ -32,11 +32,35 @@
 		</Message>	 -->
 		<Message name="PCB编号" startByte="708" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="9">
 		</Message>
+		<Message name="老版本软件版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
+		</Message>
 		<Message name="软件版本" startByte="716" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="6">
 		</Message>
+		
 		<Message name="当前逻辑区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="enum" dispIndex="0">
 			<EnumValue name="GOLDEN区" color="#FF0000" value="0"/>
 			<EnumValue name="UPDATE区" color="#00FF00" value="255"/>	
+		</Message>
+		<Message name="FPGA 温度" startByte="600" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="16">
+		</Message>
+		<Message name="SYSMON_AD 2" startByte="620" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
+		</Message>
+		
+		<Message name="FPGA VCCInt" startByte="604" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
+		</Message>
+		<Message name="FPGA VCCAUX" startByte="608" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="17">
+		</Message>
+		<Message name="TEMP_ADC 1" startByte="612" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
+		</Message>
+		<Message name="TEMP_ADC 2" startByte="616" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
+		</Message>
+		<Message name="TEMP_AMP 1" startByte="624" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
+		</Message>
+		<Message name="TEMP_AMP 2" startByte="628" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
+		</Message>
+		<Message name="TEMP_AMP 3" startByte="632" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
+		</Message>
+		<Message name="TEMP_AMP 4" startByte="636" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="19">
 		</Message>
 		<!-- <Message name="黄金/更新区域" startByte="7" startBit="0" bitLength="8" unit="" parseType="calc" dispIndex="11">
 		</Message> -->
@@ -67,14 +91,8 @@
 		<Message name="lwip_MAC层-Protocol error" startByte="516" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
 		<Message name="lwip_MAC层-Error in options" startByte="518" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
 		<Message name="lwip_MAC层-Misc error" startByte="520" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
-		<Message name="lwip_MAC层-cachehit" startByte="522" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
-		
-		
-		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message>
-		
-		<Message name="XXXX写MEM-剩余" startByte="828" startBit="0" bitLength="32" unit="" parseType="calc" dispIndex="4">
-		</Message> -->
+		<Message name="lwip_MAC层-cachehit" startByte="522" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message> -->
+
 		<!-- struct stats_proto {
 		  STAT_COUNTER xmit;             /* Transmitted packets. */
 		  STAT_COUNTER recv;             /* Received packets. */
@@ -135,9 +153,8 @@
 		<Message name="lwip_TCP层-Misc error" startByte="592" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>
 		<Message name="lwip_TCP层-cachehit" startByte="594" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="5"></Message>	
 		 -->
-<!--		<Message name="硬件逻辑版本" startByte="6" startBit="0" bitLength="16" unit="" parseType="calc" dispIndex="8">
-		</Message>
- 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
+
+<!-- 		<Message name="软件版本" startByte="7" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message> -->
 <!-- 		<Message name="差分放大器版本" startByte="739" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -303,6 +320,10 @@
 			<EnumValue name="ST_WAIT_CNT" value="6"/>
 			<EnumValue name="ST_RD_DATA" value="7"/>
 			<EnumValue name="ST_RD_LAST" value="4"/>
+			<EnumValue name="ST_WAIT_STAT" value="8"/>
+			<EnumValue name="ST_LOOP" value="9"/>
+			<EnumValue name="ST_JUMP" value="10"/>
+			<EnumValue name="ST_WAIT_SEQ" value="11"/>
 		</Message>
 		<Message name="芯片1通道1#RDY失败计数" startByte="701" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
@@ -1196,7 +1217,144 @@
 		<Message name="AD9136#2_中断向量" startByte="406" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 			<!-- <EnumValue name="正常" value="1"/> -->
 		</Message>
+
+		<Message name="延时模块-信号源1" startByte="834" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="内部生成" value="1"/>
+			<EnumValue name="外部提供" value="0"/>
+		</Message>
+		<Message name="延时模块-信号源2" startByte="834" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="内部生成" value="1"/>
+			<EnumValue name="外部提供" value="0"/>
+		</Message>
+		<Message name="延时模块-信号源3" startByte="834" startBit="2" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="内部生成" value="1"/>
+			<EnumValue name="外部提供" value="0"/>
+		</Message>
+		<Message name="延时模块-信号源4" startByte="834" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="内部生成" value="1"/>
+			<EnumValue name="外部提供" value="0"/>
+		</Message>
+		<Message name="延时模块-信号路径1" startByte="833" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="直达延时模块" value="1"/>
+			<EnumValue name="经过计时计数" value="0"/>
+		</Message>
+		<Message name="延时模块-信号路径2" startByte="833" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="直达延时模块" value="1"/>
+			<EnumValue name="经过计时计数" value="0"/>
+		</Message>
+		<Message name="延时模块-信号路径3" startByte="833" startBit="2" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="直达延时模块" value="1"/>
+			<EnumValue name="经过计时计数" value="0"/>
+		</Message>
+		<Message name="延时模块-信号路径4" startByte="833" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="直达延时模块" value="1"/>
+			<EnumValue name="经过计时计数" value="0"/>
+		</Message>
+		<Message name="延时模块-延时设置1" startByte="832" startBit="0" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="HOST直接设置" value="1"/>
+			<EnumValue name="逻辑动态补偿" value="0"/>
+		</Message>
+		<Message name="延时模块-延时设置2" startByte="832" startBit="1" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="HOST直接设置" value="1"/>
+			<EnumValue name="逻辑动态补偿" value="0"/>
+		</Message>
+		<Message name="延时模块-延时设置3" startByte="832" startBit="2" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="HOST直接设置" value="1"/>
+			<EnumValue name="逻辑动态补偿" value="0"/>
+		</Message>
+		<Message name="延时模块-延时设置4" startByte="832" startBit="3" bitLength="1" unit="" parseType="enum" dispIndex="0">
+			<EnumValue name="HOST直接设置" value="1"/>
+			<EnumValue name="逻辑动态补偿" value="0"/>
+		</Message>
 		
+		<Message name="延时模块-最近设置延时值222" startByte="832" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-最近设置延时值" startByte="836" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-内生触发个数" startByte="840" startBit="0" bitLength="32" unit="个" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-内生触发间隔" startByte="844" startBit="0" bitLength="32" unit="周期" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-通道4延时" startByte="848" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-通道3延时" startByte="852" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-通道2延时" startByte="856" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-通道1延时" startByte="860" startBit="0" bitLength="32" unit="ps" parseType="calc" dispIndex="4">
+		</Message>
+		<Message name="延时模块-Align tap 4-1）" startByte="864" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 4-2）" startByte="865" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 4-3）" startByte="866" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 4-4）" startByte="867" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 3-1）" startByte="868" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 3-2）" startByte="869" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 3-3）" startByte="870" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 3-4）" startByte="871" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 2-1）" startByte="872" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 2-2）" startByte="873" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 2-3）" startByte="874" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 2-4）" startByte="875" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Align tap 1-1）" startByte="876" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 1-2）" startByte="877" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 1-3）" startByte="878" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>                        
+		<Message name="延时模块-Align tap 1-4）" startByte="879" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="15">
+		</Message>
+		<Message name="延时模块-Delay tap（4-1）" startByte="880" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（4-2）" startByte="881" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（4-3）" startByte="882" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（4-4）" startByte="883" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>
+		<Message name="延时模块-Delay tap（3-1）" startByte="884" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（3-2）" startByte="885" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（3-3）" startByte="886" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（3-4）" startByte="887" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>
+		<Message name="延时模块-Delay tap（2-1）" startByte="888" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-2）" startByte="889" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-3）" startByte="890" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-4）" startByte="891" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>
+		<Message name="延时模块-Delay tap（2-1）" startByte="892" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-2）" startByte="893" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-3）" startByte="894" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                         
+		<Message name="延时模块-Delay tap（2-4）" startByte="895" startBit="0" bitLength="8" unit="tap" parseType="calc" dispIndex="14">
+		</Message>                       
+		<Message name="延时模块-TDC结果（1）" startByte="962" startBit="0" bitLength="16" unit="tap" parseType="calc" dispIndex="5">
+		</Message>                       
+		<Message name="延时模块-TDC结果（2）" startByte="960" startBit="0" bitLength="16" unit="tap" parseType="calc" dispIndex="5">
+		</Message>                      
+		<Message name="延时模块-TDC结果（3）" startByte="966" startBit="0" bitLength="16" unit="tap" parseType="calc" dispIndex="5">
+		</Message>                       
+		<Message name="延时模块-TDC结果（4）" startByte="964" startBit="0" bitLength="16" unit="tap" parseType="calc" dispIndex="5">
+		</Message>
 		<!--<Message name="AD9516_REG000" startByte="16" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">
 		</Message>
 		<Message name="AD9516_REG001" startByte="17" startBit="0" bitLength="8" unit="" parseType="number" dispIndex="0">

@@ -209,6 +209,90 @@ function Calc13(x)
 	s = string.format("%u",cnt)
 	return s
 end
+
+function Calc14(x)
+--转换iodelay的tap数
+	local num
+	num = string.byte(x,1) * 2
+	return num
+end
+
+function Calc15(x)
+--转换iodelay的初始tap数
+	local num
+	num = string.byte(x,1)
+	return num
+end
+
+function Calc16(x)
+--内部转换温度
+	local num
+	num = string.byte(x,2) * 256 + string.byte(x,1)
+	num = num/65536.0/0.00199451786 - 273.67
+	local S
+	S = "C"
+	local s
+	s = string.format("%.2f %s",num, S)
+	return s
+end
+
+function Calc17(x)
+--转换电压内部
+	local num
+	num = string.byte(x,2) * 256 + string.byte(x,1)
+	num = num * 3 / 65536
+	local S
+	S = "V"
+	local s
+	s = string.format("%.2f %s",num, S)
+	return s
+end
+
+
+function Calc18(x)
+--外部转换电阻
+	local num
+	num = string.byte(x,2) * 256 + string.byte(x,1)
+	num = num / 65536
+	local r
+	r = 10000 * num / (1.8 - num)
+	local s
+	s = string.format("%.2f",r / 1000)
+	return s
+	
+end
+
+function Calc19(x)
+--外部转换温度(NTC_10K)
+	local num
+	num = string.byte(x,2) * 256 + string.byte(x,1)
+	num = num / 65536
+	local R
+	R = 10000 * num / (1.8 - num)
+	local B
+	B = 3435
+	local T2
+	T2 = 273.15 + 25
+	local t
+	t = 1 / ((math.log(R / 10000) / B) + (1 / T2)) -273.15
+	local S
+	S = "C"
+	s = string.format("%.2f %s",t, S)
+	return s
+end
+
+function Calc20(x)
+--转换电压外部
+	local num
+	num = string.byte(x,2) * 256 + string.byte(x,1)
+	num = num / 65536
+	local S
+	S = "V"
+	local s
+	s = string.format("%.2f %s",num, S)
+	return s
+end
+
 -- function Calc09(x)
 	-- local y
 	-- y = string.byte(x,1)
